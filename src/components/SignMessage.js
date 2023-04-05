@@ -3,6 +3,9 @@ import { useSignMessage } from "wagmi";
 const SignMessage = () => {
   const { data, isError, isLoading, isSuccess, signMessage } = useSignMessage({
     message: "Good morning!",
+    onSuccess(data) {
+      console.log("Success", data);
+    },
   });
 
   return (

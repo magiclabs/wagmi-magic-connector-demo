@@ -1,18 +1,32 @@
-import { useAccount, useEnsName, useDisconnect } from "wagmi";
+import {
+  useAccount,
+  useEnsName,
+  useDisconnect,
+  useConnect,
+  useNetwork,
+} from "wagmi";
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
-import Network from "./Network";
 
 const Wallet = () => {
-  const { address } = useAccount();
+  const { address, connector: activeConnector, status } = useAccount();
   const { data: ensName } = useEnsName({ address });
   const { disconnect } = useDisconnect();
+  const { data, connectors } = useConnect();
+  const { chain, chains } = useNetwork();
+
+  console.log("Connectors: ", connectors);
+  console.log("Active Connector: ", activeConnector);
+  console.log("Data: ", data);
+  console.log("Chains: ", chains);
 
   return (
     <div className="wallet-container">
       <div>
         <div>Connected to {ensName ?? address}</div>
-        <Network />
+        <div>Connector: {activeConnector?.name}</div>
+        <div>Status: {status}</div>
+        <div>Chain: {chain?.name}</div>
         <Balance address={address} />
         <SignMessage />
         <button onClick={() => disconnect()}>Disconnect</button>
