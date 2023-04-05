@@ -1,4 +1,5 @@
 import { useAccount, useEnsName, useDisconnect } from "wagmi";
+import Balance from "./Balance";
 
 const Wallet = () => {
   const { address } = useAccount();
@@ -9,6 +10,7 @@ const Wallet = () => {
     <div className="wallet-container">
       <div>
         <div>Connected to {ensName ?? address}</div>
+        <Balance address={address} />
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>
     </div>
