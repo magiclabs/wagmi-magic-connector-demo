@@ -26,7 +26,7 @@ const Wallet = () => {
         <div>Connected to {ensName ?? address}</div>
         <div>Connector: {activeConnector?.name}</div>
         <div>Status: {status}</div>
-        <div>Chain: {chain?.name}</div>
+        {chain && <div>Chain: {chain?.name}</div>}
         <Balance address={address} />
         <SignMessage />
         <button onClick={() => disconnect()}>Disconnect</button>
