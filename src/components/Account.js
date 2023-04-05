@@ -8,6 +8,7 @@ const Account = () => {
   return (
     <div className="account-container">
       {!isConnected ? <SignIn /> : <Wallet />}
+      <button onClick={() => console.log(isConnected)}>Connected?</button>
     </div>
   );
 };
