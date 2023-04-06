@@ -7,6 +7,7 @@ import {
 } from "wagmi";
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
+import SendTransaction from "./SendTransaction";
 
 const Wallet = () => {
   const { address, connector: activeConnector, status } = useAccount();
@@ -28,6 +29,7 @@ const Wallet = () => {
         <div>Status: {status}</div>
         {chain && <div>Chain: {chain?.name}</div>}
         <Balance address={address} />
+        <SendTransaction />
         <SignMessage />
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>
