@@ -45,7 +45,7 @@ const SendTransaction = () => {
           onChange={(e) => setAmount(e.target.value)}
         />
         <button
-          disabled={isloading || !sendTransaction || !address || !amount}
+          disabled={isLoading || !sendTransaction || !address || !amount}
           type="submit"
         >
           {isLoading ? "Sending..." : "Send"}
