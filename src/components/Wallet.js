@@ -4,6 +4,8 @@ import {
   useDisconnect,
   useConnect,
   useNetwork,
+  useProvider,
+  useSigner,
 } from "wagmi";
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
@@ -15,11 +17,15 @@ const Wallet = () => {
   const { disconnect } = useDisconnect();
   const { data, connectors } = useConnect();
   const { chain, chains } = useNetwork();
+  const provider = useProvider();
+  const { data: signer } = useSigner();
 
   console.log("Connectors: ", connectors);
   console.log("Active Connector: ", activeConnector);
   console.log("Data: ", data);
   console.log("Chains: ", chains);
+  console.log("Provider: ", provider);
+  console.log("Signer: ", signer);
 
   return (
     <div className="wallet-container">
@@ -29,7 +35,7 @@ const Wallet = () => {
         <div>Status: {status}</div>
         {chain && <div>Chain: {chain?.name}</div>}
         <Balance address={address} />
-        <SendTransaction />
+        {/* <SendTransaction /> */}
         <SignMessage />
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>

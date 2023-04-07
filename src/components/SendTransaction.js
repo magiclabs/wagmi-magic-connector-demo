@@ -8,7 +8,9 @@ import {
 import { useDebounce } from "use-debounce";
 
 const SendTransaction = () => {
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState(
+    "0x8bdCE5551B544AF8dFfB09Ff34c34da7FC241Bd0"
+  );
   const [debouncedAddress] = useDebounce(address, 500);
   const [amount, setAmount] = useState("0.01");
   const [debouncedAmount] = useDebounce(amount, 500);
@@ -25,15 +27,15 @@ const SendTransaction = () => {
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
-
-  const handleSendTransaction = (e) => {
-    e.preventDefault();
-    sendTransaction?.();
-  };
-
+  console.log(config);
   return (
     <div>
-      <form onSubmit={handleSendTransaction}>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          sendTransaction?.();
+        }}
+      >
         <input
           value={address}
           placeholder="Receiving Address"
@@ -54,7 +56,7 @@ const SendTransaction = () => {
           <div>
             Successfully sent {amount} ether to {address}. View transaction on{" "}
             <a
-              href={`https://etherscan.io/tx/${data?.hash}`}
+              href={`https://goerli.etherscan.io/tx/${data?.hash}`}
               target="_blank"
               rel="noreferrer"
             >
