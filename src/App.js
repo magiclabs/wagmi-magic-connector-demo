@@ -39,7 +39,9 @@ function App() {
   return (
     <WagmiConfig client={client}>
       <div className="App">
-        <h1>Magic + Wagmi</h1>
+        <h1>
+          Magic <span className="normal-weight">+</span> Wagmi
+        </h1>
         {!isConnected ? <SignIn magicConnector={magicConnector} /> : <Wallet />}
       </div>
     </WagmiConfig>

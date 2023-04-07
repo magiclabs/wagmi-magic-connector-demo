@@ -8,7 +8,7 @@ const SignIn = ({ magicConnector }) => {
   return (
     <div className="sign-in-container">
       <button
-        className="sign-in-button"
+        className="sign-in-button primary-button"
         onClick={() => connect({ magicConnector })}
       >
         Sign In

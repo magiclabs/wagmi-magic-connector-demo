@@ -37,7 +37,9 @@ const Wallet = () => {
         <Balance address={address} />
         {/* <SendTransaction /> */}
         <SignMessage />
-        <button onClick={() => disconnect()}>Disconnect</button>
+        <button className="disconnect-button" onClick={() => disconnect()}>
+          Disconnect
+        </button>
       </div>
     </div>
   );

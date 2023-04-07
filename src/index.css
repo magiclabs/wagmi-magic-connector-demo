@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 
 html {
   font-size: 62.5%;
@@ -11,7 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.6rem;
-  letter-spacing: 0.05rem;
 }
 
 .App {
@@ -25,22 +24,27 @@ body {
 
 h1 {
   font-size: 4rem;
+  font-weight: 800;
+}
+
+.normal-weight {
+  font-weight: normal;
 }
 
 button {
   background-color: #a799ff;
-  border-radius: 30rem;
+  font-family: "Inter", sans-serif;
+  border-radius: 300px;
   cursor: pointer;
   border: none;
   color: #18171a;
-  padding: 1.2rem 2.4rem;
+  padding: 12px 24px;
   font-weight: 600;
   font-size: 1.6rem;
-  letter-spacing: 0.05rem;
 }
 
 button:hover {
-  background: linear-gradient(
+  background-color: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.05),
       rgba(255, 255, 255, 0.05)
@@ -62,10 +66,42 @@ button:active {
   margin-top: 10rem;
 }
 
+.disconnect-button {
+  background-color: #ff9b80;
+}
+
+.disconnect-button:hover {
+  background-color: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.05),
+      rgba(255, 255, 255, 0.05)
+    ),
+    linear-gradient(0deg, #ff9b80, #ff9b80), #191919;
+}
+
+.disconnect-button:active {
+  background-color: #d43100;
+}
+
 .wallet-container {
   background-color: #383838;
   width: fit-content;
   padding: 3rem;
   border-radius: 2rem;
   box-shadow: 0px 4px 24px rgba(50, 50, 50, 0.42);
+}
+
+input {
+  background: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+  gap: 1.2rem;
+  width: 300px;
+  height: 48px;
+  border: 1px solid #dddbe0;
+  border-radius: 10px;
+  outline: none;
 }

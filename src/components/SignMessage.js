@@ -24,7 +24,7 @@ const SignMessage = () => {
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Write your message..."
         />
-        <button disabled={isLoading} type="submit">
+        <button className="secondary-button" disabled={isLoading} type="submit">
           Sign message
         </button>
       </form>
