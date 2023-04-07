@@ -6,9 +6,12 @@ const SignIn = ({ magicConnector }) => {
   });
 
   return (
-    <div>
-      <button onClick={() => connect({ magicConnector })}>
-        Connect Wallet
+    <div className="sign-in-container">
+      <button
+        className="sign-in-button"
+        onClick={() => connect({ magicConnector })}
+      >
+        Sign In
       </button>
     </div>
   );

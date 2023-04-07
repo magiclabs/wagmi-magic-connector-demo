@@ -7,7 +7,6 @@ import {
 } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { MagicAuthConnector } from "@everipedia/wagmi-magic-connector";
-import Account from "./components/Account";
 import SignIn from "./components/SignIn";
 import Wallet from "./components/Wallet";
 
