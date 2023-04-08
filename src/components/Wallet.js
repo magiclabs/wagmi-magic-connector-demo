@@ -10,6 +10,7 @@ import {
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
 import SendTransaction from "./SendTransaction";
+import StatusCircle from "./StatusCircle";
 
 const Wallet = () => {
   const { address, connector: activeConnector, status } = useAccount();
@@ -32,6 +33,10 @@ const Wallet = () => {
       <div>Connected to {ensName ?? address}</div>
       <div>Connector: {activeConnector?.name}</div>
       <div>Status: {status.slice(0, 1).toUpperCase() + status.slice(1)}</div>
+      <div className="status-container">
+        <div>Status:</div> <StatusCircle status={status} />
+      </div>
+
       {chain && <div>Chain: {chain?.name}</div>}
       <Balance address={address} />
       {/* <SendTransaction /> */}
