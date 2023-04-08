@@ -29,18 +29,16 @@ const Wallet = () => {
 
   return (
     <div className="wallet-container">
-      <div>
-        <div>Connected to {ensName ?? address}</div>
-        <div>Connector: {activeConnector?.name}</div>
-        <div>Status: {status}</div>
-        {chain && <div>Chain: {chain?.name}</div>}
-        <Balance address={address} />
-        {/* <SendTransaction /> */}
-        <SignMessage />
-        <button className="disconnect-button" onClick={() => disconnect()}>
-          Disconnect
-        </button>
-      </div>
+      <div>Connected to {ensName ?? address}</div>
+      <div>Connector: {activeConnector?.name}</div>
+      <div>Status: {status.slice(0, 1).toUpperCase() + status.slice(1)}</div>
+      {chain && <div>Chain: {chain?.name}</div>}
+      <Balance address={address} />
+      {/* <SendTransaction /> */}
+      <SignMessage />
+      <button className="disconnect-button" onClick={() => disconnect()}>
+        Disconnect
+      </button>
     </div>
   );
 };
