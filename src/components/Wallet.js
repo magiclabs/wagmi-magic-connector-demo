@@ -11,6 +11,7 @@ import Balance from "./Balance";
 import SignMessage from "./SignMessage";
 import SendTransaction from "./SendTransaction";
 import StatusCircle from "./StatusCircle";
+import Divider from "./Divider";
 
 const Wallet = () => {
   const { address, connector: activeConnector, status } = useAccount();
@@ -41,6 +42,7 @@ const Wallet = () => {
       <Balance address={address} />
       {/* <SendTransaction /> */}
       <SignMessage />
+      <Divider />
       <button className="disconnect-button" onClick={() => disconnect()}>
         Disconnect
       </button>

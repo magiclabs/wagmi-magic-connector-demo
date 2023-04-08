@@ -136,3 +136,10 @@ input {
 .connected {
   background-color: #90f0d3;
 }
+
+.divider {
+  background-color: #ffffff70;
+  margin: 20px 0 20px 0;
+  width: 220px;
+  height: 1px;
+}
