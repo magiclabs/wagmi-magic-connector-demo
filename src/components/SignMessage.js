@@ -18,7 +18,7 @@ const SignMessage = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="sign-message-container" onSubmit={handleSubmit}>
         <input
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -28,8 +28,8 @@ const SignMessage = () => {
           Sign message
         </button>
       </form>
-      {isSuccess && <div>Signature: {data}</div>}
-      {isError && <div>Error signing message</div>}
+      {isSuccess && <div className="message-status">Signature: {data}</div>}
+      {isError && <div className="message-status">Error signing message</div>}
     </div>
   );
 };
