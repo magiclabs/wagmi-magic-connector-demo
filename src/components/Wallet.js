@@ -31,15 +31,16 @@ const Wallet = () => {
 
   return (
     <div className="wallet-container">
-      <div>Connected to {ensName ?? address}</div>
       <div>Connector: {activeConnector?.name}</div>
-      <div>Status: {status.slice(0, 1).toUpperCase() + status.slice(1)}</div>
       <div className="status-container">
         <div>Status:</div> <StatusCircle status={status} />
       </div>
 
       {chain && <div>Chain: {chain?.name}</div>}
+      <Divider />
+      <div>Connected to {ensName ?? address}</div>
       <Balance address={address} />
+      <Divider />
       {/* <SendTransaction /> */}
       <SignMessage />
       <Divider />

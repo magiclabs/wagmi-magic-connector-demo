@@ -15,9 +15,9 @@ const magicConnector = new MagicAuthConnector({
   options: {
     apiKey: "pk_live_89B21C65CB6370D2",
     isDarkMode: true,
-    // oauthOptions: {
-    //   providers: ["google", "github"],
-    // },
+    oauthOptions: {
+      providers: ["google", "github"],
+    },
   },
 });
 
