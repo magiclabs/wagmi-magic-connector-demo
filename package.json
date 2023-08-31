@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@magic-ext/oauth": "^10.1.0",
     "@magiclabs/wagmi-connector": "^1.1.1",
     "ethers": "^5.7.2",
-    "magic-sdk": "^16.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",

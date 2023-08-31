@@ -1,11 +1,7 @@
-import { configureChains, createConfig, WagmiConfig, mainnet } from "wagmi";
+import { configureChains, createConfig, WagmiConfig } from "wagmi";
+import { mainnet } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { MagicAuthConnector } from "@magiclabs/wagmi-connector";
-import SignIn from "./components/SignIn";
-import Wallet from "./components/Wallet";
-import { Magic } from "magic-sdk";
-import { OAuthExtension } from "@magic-ext/oauth";
-import { useEffect } from "react";
 import Dashboard from "./components/Dashboard";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(

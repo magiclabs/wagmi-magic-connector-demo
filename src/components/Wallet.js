@@ -1,13 +1,7 @@
-import {
-  useAccount,
-  useEnsName,
-  useDisconnect,
-  useConnect,
-  useNetwork,
-} from "wagmi";
+import { useAccount, useEnsName, useDisconnect, useNetwork } from "wagmi";
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
-import SendTransaction from "./SendTransaction";
+// import SendTransaction from "./SendTransaction";
 import StatusCircle from "./StatusCircle";
 import Divider from "./Divider";
 
@@ -15,13 +9,7 @@ const Wallet = () => {
   const { address, connector: activeConnector, status } = useAccount();
   const { data: ensName } = useEnsName({ address });
   const { disconnect } = useDisconnect();
-  const { data, connectors } = useConnect();
-  const { chain, chains } = useNetwork();
-
-  console.log("Connectors: ", connectors);
-  console.log("Active Connector: ", activeConnector);
-  console.log("Data: ", data);
-  console.log("Chains: ", chains);
+  const { chain } = useNetwork();
 
   return (
     <div className="wallet-container">

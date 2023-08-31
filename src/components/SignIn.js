@@ -1,7 +1,7 @@
 import { useConnect } from "wagmi";
 
 const SignIn = () => {
-  const { connect, connectors } = useConnect();
+  const { connect, connectors, isLoading, isIdle } = useConnect();
 
   return (
     <div className="sign-in-container">
@@ -9,7 +9,7 @@ const SignIn = () => {
         className="sign-in-button primary-button"
         onClick={() => connect({ connector: connectors[0] })}
       >
-        Sign In
+        {isLoading ? "Loading..." : isIdle ? "Connect" : "Connecting..."}
       </button>
     </div>
   );
