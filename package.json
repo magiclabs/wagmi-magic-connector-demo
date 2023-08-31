@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@everipedia/wagmi-magic-connector": "^0.11.0",
     "@magic-ext/oauth": "^10.1.0",
+    "@magiclabs/wagmi-connector": "^1.1.1",
     "ethers": "^5.7.2",
     "magic-sdk": "^16.1.0",
     "react": "^18.2.0",
@@ -12,7 +12,7 @@
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "use-debounce": "^9.0.4",
-    "wagmi": "^0.12.9"
+    "wagmi": "^1.3.8"
   },
   "scripts": {
     "start": "react-scripts start",
