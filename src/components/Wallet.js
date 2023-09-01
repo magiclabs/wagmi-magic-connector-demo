@@ -5,7 +5,7 @@ import SignMessage from "./SignMessage";
 import StatusCircle from "./StatusCircle";
 import Divider from "./Divider";
 
-const Wallet = () => {
+const Wallet = ({ redirectResult }) => {
   const { address, connector: activeConnector, status } = useAccount();
   const { data: ensName } = useEnsName({ address });
   const { disconnect } = useDisconnect();
@@ -21,6 +21,7 @@ const Wallet = () => {
       {chain && <div>Chain: {chain?.name}</div>}
       <Divider />
       <div>Connected to {ensName ?? address}</div>
+      <div>Email: {redirectResult.oauth}</div>
       <Balance address={address} />
       <Divider />
       {/* <SendTransaction /> */}
