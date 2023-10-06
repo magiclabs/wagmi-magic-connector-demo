@@ -2201,10 +2201,10 @@
   resolved "https://registry.yarnpkg.com/@magic-sdk/types/-/types-15.8.0.tgz#d54dc8221bb0f69c74ff96d486535ce150c2c04b"
   integrity sha512-xLQsBAg2JXUn39dRfZW6Z3LUT50qz/3pg6R658oVBr4LbJd/L8iAR0zCRmjLLNXzfYm1RkJYZWuHaxjJgKlkSA==
 
-"@magiclabs/wagmi-connector@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@magiclabs/wagmi-connector/-/wagmi-connector-1.1.1.tgz#344cd6800b197f606617bb0bc119153fa60fb538"
-  integrity sha512-IhT1UWuK6ujeOwRnK3RLV8/3y4+JE4+C3auCgE6UUXkt4G+PGrENW51rGDxRkDx+0RzlnKnF3Gt0H4HePDtcsA==
+"@magiclabs/wagmi-connector@^1.1.3":
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@magiclabs/wagmi-connector/-/wagmi-connector-1.1.3.tgz#f3e44ea87e8fd058d0a3606e860213d00e6ea44f"
+  integrity sha512-+iZLvH63V6sO8bNykacYSnb/smbnJIa0HnZ8YfyNBYTw1yopWBVYGRUiVdIBGnzEe5Jy2/wsGl1jy8lfGlVkGg==
   dependencies:
     "@changesets/cli" "^2.24.0"
     "@magic-ext/oauth" "^12.3.0"

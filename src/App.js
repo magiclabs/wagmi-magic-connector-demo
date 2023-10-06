@@ -1,7 +1,7 @@
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { mainnet } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
-import { MagicAuthConnector } from "@magiclabs/wagmi-connector";
+import { DedicatedWalletConnector } from "@magiclabs/wagmi-connector";
 import Dashboard from "./components/Dashboard";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
@@ -14,7 +14,7 @@ const config = createConfig({
   publicClient,
   webSocketPublicClient,
   connectors: [
-    new MagicAuthConnector({
+    new DedicatedWalletConnector({
       chains,
       options: {
         apiKey: "pk_live_D34413A845CE453E",
