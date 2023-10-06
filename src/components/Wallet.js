@@ -1,10 +1,4 @@
-import {
-  useAccount,
-  useEnsName,
-  useDisconnect,
-  useNetwork,
-  useConnect,
-} from "wagmi";
+import { useAccount, useEnsName, useDisconnect, useNetwork } from "wagmi";
 import Balance from "./Balance";
 import SignMessage from "./SignMessage";
 // import SendTransaction from "./SendTransaction";
@@ -16,7 +10,6 @@ const Wallet = () => {
   const { data: ensName } = useEnsName({ address });
   const { disconnect } = useDisconnect();
   const { chain } = useNetwork();
-  console.log(useConnect());
 
   return (
     <div className="wallet-container">
