@@ -1,13 +1,13 @@
-import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { mainnet } from "wagmi/chains";
-import { publicProvider } from "wagmi/providers/public";
-import { DedicatedWalletConnector } from "@magiclabs/wagmi-connector";
-import Dashboard from "./components/Dashboard";
+import { configureChains, createConfig, WagmiConfig } from "wagmi"
+import { mainnet } from "wagmi/chains"
+import { publicProvider } from "wagmi/providers/public"
+import { DedicatedWalletConnector } from "@magiclabs/wagmi-connector"
+import Dashboard from "./components/Dashboard"
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],
   [publicProvider()]
-);
+)
 
 const config = createConfig({
   autoConnect: true,
@@ -25,21 +25,21 @@ const config = createConfig({
         },
         magicSdkConfiguration: {
           network: {
-            rpcUrl: "https://rpc.ankr.com/eth",
-            chainId: 1,
+            rpcUrl: "https://rpc.ankr.com/eth_goerli",
+            chainId: 5,
           },
         },
       },
     }),
   ],
-});
+})
 
 function App() {
   return (
     <WagmiConfig config={config}>
       <Dashboard />
     </WagmiConfig>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@magiclabs/wagmi-connector": "^1.1.3",
+    "@magiclabs/wagmi-connector": "../wagmi-magic-connector",
     "ethers": "^5.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
     "react-scripts": "5.0.1",
     "use-debounce": "^9.0.4",
-    "wagmi": "^1.3.8"
+    "wagmi": "^1.4.12"
   },
   "scripts": {
     "start": "react-scripts start",

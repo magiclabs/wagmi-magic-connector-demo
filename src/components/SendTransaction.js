@@ -1,39 +1,46 @@
-import { parseEther } from "ethers/lib/utils.js";
-import { useState } from "react";
+import { parseEther } from "ethers/lib/utils.js"
+import { useState } from "react"
 import {
   useSendTransaction,
   usePrepareSendTransaction,
   useWaitForTransaction,
-} from "wagmi";
-import { useDebounce } from "use-debounce";
+} from "wagmi"
+import { useDebounce } from "use-debounce"
 
 const SendTransaction = () => {
   const [address, setAddress] = useState(
     "0x8bdCE5551B544AF8dFfB09Ff34c34da7FC241Bd0"
-  );
-  const [debouncedAddress] = useDebounce(address, 500);
-  const [amount, setAmount] = useState("0.01");
-  const [debouncedAmount] = useDebounce(amount, 500);
+  )
+  const [debouncedAddress] = useDebounce(address, 500)
+  const [amount, setAmount] = useState("0.01")
+  const [debouncedAmount] = useDebounce(amount, 500)
 
   const { config, error } = usePrepareSendTransaction({
-    request: {
-      to: debouncedAddress,
-      value: debouncedAmount ? parseEther(debouncedAmount) : undefined,
-    },
-  });
+    to: debouncedAddress,
+    value: debouncedAmount ? parseEther(debouncedAmount) : undefined,
+  })
 
-  const { data, sendTransaction } = useSendTransaction(config);
+  const {
+    data,
+    sendTransaction,
+    error: transactionError,
+  } = useSendTransaction(config)
 
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
-  });
-  console.log(config);
+  })
+  console.log(config)
+  console.log(error)
   return (
     <div>
       <form
         onSubmit={(e) => {
-          e.preventDefault();
-          sendTransaction?.();
+          e.preventDefault()
+
+          console.log("sendTransaction", sendTransaction)
+          console.log(transactionError)
+          console.log(error)
+          sendTransaction?.()
         }}
       >
         <input
@@ -47,7 +54,7 @@ const SendTransaction = () => {
           onChange={(e) => setAmount(e.target.value)}
         />
         <button
-          disabled={isLoading || !sendTransaction || !address || !amount}
+          // disabled={isLoading || !sendTransaction || !address || !amount}
           type="submit"
         >
           {isLoading ? "Sending..." : "Send"}
@@ -71,7 +78,7 @@ const SendTransaction = () => {
         )}
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default SendTransaction;
+export default SendTransaction
